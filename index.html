@@ -11,6 +11,23 @@
 body{margin:0;background:#FFFFFF}
 a{color:#004250}a:hover{color:#B8361F}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #FF5C3E;outline-offset:3px}
+
+/* Fotos: duotono azul #004250 + naranja #FF5C3E con CSS; los archivos originales no se modifican */
+.foto,.duo{position:absolute;inset:0;overflow:hidden}
+.foto img,.duo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.duo{background:#FF5C3E;isolation:isolate}
+.duo img{filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply}
+.duo::after{content:"";position:absolute;inset:0;background:#004250;mix-blend-mode:lighten;pointer-events:none}
+.capa{position:absolute;inset:0;pointer-events:none}
+.sobre-foto>:not(.duo):not(.capa){position:relative}
+.hero-foto{left:auto;width:58%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%)}
+.hero-foto img{object-position:50% 12%}
+.hero-capa{background:linear-gradient(90deg,rgba(0,42,51,.9) 0%,rgba(0,42,51,.54) 55%,rgba(0,42,51,.42) 100%)}
+@media (max-width:900px){.hero-foto{width:100%;-webkit-mask-image:none;mask-image:none}.hero-capa{background:rgba(0,42,51,.6)}}
+.insta{position:relative;height:200px;overflow:hidden}
+.insta img{width:100%;height:100%;object-fit:cover;display:block}
+/* Móvil: el titular del hero y las palabras en letra de pincel se salían de la pantalla */
+@media (max-width:600px){#t-hero{font-size:40px!important}[style*="Caveat Brush"]{font-size:17vw!important}}
 </style>
 </head>
 <body>
@@ -35,8 +52,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <header style="background: #FFFFFF; box-shadow: 0 2px 18px rgba(0,42,51,0.08); position: relative; z-index: 2">
 <div style="display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between">
 <a href="#" aria-label="IMPULSA IGUALDAD, ir al inicio" style="text-decoration: none; display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px">
-<span style="width: 46px; height: 46px; border-radius: 50%; background: #FF5C3E; display: inline-flex; align-items: center; justify-content: center; font-family: Nunito, sans-serif; font-weight: 900; color: #1B2B30; font-size: 20px">II</span>
-<span style="font-family: Nunito, sans-serif; font-weight: 900; color: #004250; font-size: 21px; letter-spacing: 0.03em; line-height: 1.05">IMPULSA<br>IGUALDAD</span>
+<img src="img/logo.webp" alt="" width="600" height="163" style="height: 48px; width: auto; display: block">
 </a>
 <nav aria-label="Menú principal" style="display: flex; flex-wrap: wrap; gap: 0 30px; align-items: center; padding: 8px 24px; font-family: Nunito, sans-serif; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em">
 <a href="#" style="text-decoration: none; padding: 12px 0; border-bottom: 3px solid #FF5C3E">Inicio</a>
@@ -55,8 +71,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 
 <!-- Hero duotono -->
 <section aria-labelledby="t-hero" style="position: relative; background: #004250; overflow: hidden">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 38% 55% at 70% 45%, #FF5C3E 0%, rgba(255,92,62,0.55) 45%, rgba(0,66,80,0) 75%), radial-gradient(ellipse 30% 40% at 22% 70%, rgba(255,92,62,0.45) 0%, rgba(0,66,80,0) 70%), #004250"></div>
-<p style="position: absolute; right: 24px; top: 20px; margin: 0; background: rgba(0,42,51,0.75); color: #FFFFFF; font-size: 14px; padding: 6px 12px; border-radius: 6px">FOTO duotono azul + naranja: retrato real de una persona con discapacidad física, mirada a cámara, 2400 × 1200 px</p>
+<div class="duo hero-foto"><img src="img/hero.webp" alt="" width="2400" height="2592" fetchpriority="high"></div>
+<div aria-hidden="true" class="capa hero-capa"></div>
 <div style="position: relative; display: flex; align-items: stretch">
 <ul aria-label="Redes sociales" style="list-style: none; margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; justify-content: center; gap: 14px">
 <li><a href="https://www.instagram.com/impulsa_igualdad/" aria-label="Instagram" style="color: #FFFFFF; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg></a></li>
@@ -92,8 +108,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 </div>
 <div style="flex: 1 1 380px; min-width: 0; position: relative; padding: 24px">
 <div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 70%; height: 70%; background: #FF5C3E; border-radius: 40% 60% 55% 45%; opacity: 0.85"></div>
-<div style="position: relative; background: linear-gradient(160deg, #004250 30%, #0B6F7F 100%); color: #FFFFFF; padding: 56px 44px; text-align: center; min-height: 360px; display: flex; flex-direction: column; justify-content: center; gap: 16px">
-<p style="margin: 0; font-size: 13px; opacity: 0.9">FOTO duotono de fondo: asamblea o encuentro de asociaciones</p>
+<div class="sobre-foto" style="position: relative; background: #004250; color: #FFFFFF; padding: 56px 44px; text-align: center; min-height: 360px; display: flex; flex-direction: column; justify-content: center; gap: 16px">
+<div class="duo"><img src="img/red.webp" alt="" width="1200" height="900" loading="lazy"></div>
+<div aria-hidden="true" class="capa" style="background: rgba(0,42,51,0.52)"></div>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 32px; line-height: 1.15">Una red de federaciones y asociaciones</h3>
 <p style="margin: 0; font-size: 17px">Si tu asociación trabaja por los derechos de las personas con discapacidad física u orgánica, suma fuerzas con nosotros.</p>
 <a href="#" style="align-self: center; text-decoration: none; color: #D9E506; font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; font-size: 15px; padding: 10px 0; border-bottom: 2px solid #D9E506">Únete a la red</a>
@@ -148,22 +165,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px">
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08); display: flex; flex-direction: column">
 <div style="padding: 28px 28px 18px"><h3 style="margin: 0 0 10px; font-family: Nunito, sans-serif; font-weight: 900; font-size: 22px; color: #004250">Asistencia personal</h3><p style="margin: 0; font-size: 16px">El apoyo que permite decidir sobre la propia vida: estudiar, trabajar y participar.</p></div>
-<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 130%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px">FOTO: asistente personal y usuario/a<span style="position: absolute; left: 0; top: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Vida independiente</span></div>
+<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 130%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="duo"><img src="img/asistencia-personal.webp" alt="Un hombre en silla de ruedas sube una rampa en la calle junto a su asistente personal." width="1200" height="800" loading="lazy"></div><span style="position: absolute; left: 0; top: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Vida independiente</span></div>
 <div style="padding: 20px 28px 28px; margin-top: auto"><a href="#" style="font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px">+ Más información</a></div>
 </article>
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08); display: flex; flex-direction: column">
 <div style="padding: 28px 28px 18px"><h3 style="margin: 0 0 10px; font-family: Nunito, sans-serif; font-weight: 900; font-size: 22px; color: #004250">Programa de vacaciones</h3><p style="margin: 0; font-size: 16px">Viajes en grupo del IMSERSO con apoyos y alojamientos accesibles.</p></div>
-<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #D9E506 140%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px">FOTO: grupo de viaje en destino<span style="position: absolute; left: 0; top: -12px; background: #D9E506; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Turismo accesible</span></div>
+<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #D9E506 140%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="duo"><img src="img/vacaciones.webp" alt="Una viajera en silla de ruedas eléctrica hace el registro en la recepción de un hotel." width="1200" height="676" loading="lazy"></div><span style="position: absolute; left: 0; top: -12px; background: #D9E506; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Turismo accesible</span></div>
 <div style="padding: 20px 28px 28px; margin-top: auto"><a href="#" style="font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px">+ Ver destinos</a></div>
 </article>
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08); display: flex; flex-direction: column">
 <div style="padding: 28px 28px 18px"><h3 style="margin: 0 0 10px; font-family: Nunito, sans-serif; font-weight: 900; font-size: 22px; color: #004250">Defensa de derechos</h3><p style="margin: 0; font-size: 16px">Asesoramiento cuando se vulneran tus derechos y orientación sobre dependencia.</p></div>
-<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 130%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px">FOTO: asesoramiento o acción reivindicativa<span style="position: absolute; left: 0; top: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Derechos</span></div>
+<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 130%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="duo"><img src="img/derechos.webp" alt="Varias personas pegan notas con mensajes en un mural de una campaña de IMPULSA IGUALDAD." width="1024" height="461" loading="lazy"></div><span style="position: absolute; left: 0; top: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Derechos</span></div>
 <div style="padding: 20px 28px 28px; margin-top: auto"><a href="#" style="font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px">+ Pide asesoramiento</a></div>
 </article>
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08); display: flex; flex-direction: column">
 <div style="padding: 28px 28px 18px"><h3 style="margin: 0 0 10px; font-family: Nunito, sans-serif; font-weight: 900; font-size: 22px; color: #004250">Formación y empleo</h3><p style="margin: 0; font-size: 16px">Cursos en el campus virtual y formación a medida para empresas.</p></div>
-<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #D6D4A5 150%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px">FOTO: formación presencial u online<span style="position: absolute; left: 0; top: -12px; background: #D6D4A5; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Empleo</span></div>
+<div style="position: relative; margin: 0 28px; height: 170px; background: linear-gradient(140deg, #004250 20%, #D6D4A5 150%); color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="duo"><img src="img/formacion.webp" alt="Dos mujeres estudian juntas con un ordenador portátil y un cuaderno." width="1200" height="720" loading="lazy"></div><span style="position: absolute; left: 0; top: -12px; background: #D6D4A5; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Empleo</span></div>
 <div style="padding: 20px 28px 28px; margin-top: auto"><a href="#" style="font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px">+ Entrar al campus</a></div>
 </article>
 </div>
@@ -178,7 +195,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <p style="margin: 0; max-width: 680px">Iniciativas propias y cofinanciadas con socios nacionales y europeos.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
-<div style="min-height: 340px; background: linear-gradient(150deg, #004250 10%, #FF5C3E 160%); color: #FFFFFF; padding: 18px; box-sizing: border-box; font-size: 13px">FOTO duotono: proyecto RUMBO</div>
+<div style="position: relative; min-height: 340px; background: #004250"><div class="duo"><img src="img/rumbo.webp" alt="Una mujer en silla de ruedas mira un escaparate en la calle junto a su asistente personal." width="800" height="969" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #D9E506; color: #004250; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #004250; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 3px 12px">Turismo accesible</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">TUR4all</h3>
@@ -197,7 +214,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <p style="margin: 0; font-size: 17px">Datos públicos para analizar la equidad en el acceso a productos de apoyo.</p>
 <a href="#" style="align-self: center; font-weight: 700; color: #1B2B30">Ver observatorio</a>
 </article>
-<div style="min-height: 340px; background: linear-gradient(150deg, #004250 10%, #D9E506 170%); color: #FFFFFF; padding: 18px; box-sizing: border-box; font-size: 13px">FOTO duotono: proyectos europeos</div>
+<div style="position: relative; min-height: 340px; background: #004250"><div class="duo"><img src="img/europeos.webp" alt="Tres ponentes, uno de ellos en silla de ruedas, debaten en el escenario de un congreso internacional con subtítulos en inglés en la pantalla." width="1013" height="675" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #D6D4A5; color: #004250; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #004250; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 3px 12px">Educación</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">Taller MasterPRIM</h3>
@@ -254,15 +271,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px">
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08)">
-<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 140%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px">Imagen de la noticia<span style="position: absolute; left: 24px; bottom: -12px; background: #D9E506; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Turismo accesible</span></div>
+<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #FF5C3E 140%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="foto"><img src="img/noticia-congreso.webp" alt="Cartel del V Congreso de Turismo Accesible TUR4all sobre fondo azul, con una vista de Bilbao y el Teatro Arriaga." width="971" height="647" loading="lazy"></div><span style="position: absolute; left: 24px; bottom: -12px; background: #D9E506; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Turismo accesible</span></div>
 <div style="padding: 30px 24px 26px"><h3 style="margin: 0 0 12px; font-family: Nunito, sans-serif; font-weight: 800; font-size: 20px; line-height: 1.3"><a href="#" style="text-decoration: none">La tecnología y la IA, protagonistas del V Congreso Internacional de Turismo Accesible TUR4all</a></h3><p style="margin: 0; font-size: 15px; color: #4A5A5F">16 de octubre de 2026</p></div>
 </article>
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08)">
-<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #D9E506 150%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px">Imagen de la noticia<span style="position: absolute; left: 24px; bottom: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Derechos</span></div>
+<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #D9E506 150%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="foto"><img src="img/noticia-capacitismo.webp" alt="Varias vecinas leen en una calle de Madrid una pared cubierta de carteles de la campaña contra el capacitismo." width="1200" height="800" loading="lazy"></div><span style="position: absolute; left: 24px; bottom: -12px; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 10px">Derechos</span></div>
 <div style="padding: 30px 24px 26px"><h3 style="margin: 0 0 12px; font-family: Nunito, sans-serif; font-weight: 800; font-size: 20px; line-height: 1.3"><a href="#" style="text-decoration: none">Madrid amanece empapelado contra el capacitismo</a></h3><p style="margin: 0; font-size: 15px; color: #4A5A5F">9 de octubre de 2026</p></div>
 </article>
 <article style="background: #FFFFFF; box-shadow: 0 8px 28px rgba(0,42,51,0.08)">
-<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #D6D4A5 160%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px">Imagen de la noticia<span style="position: absolute; left: 24px; bottom: -12px; background: #D6D4A5; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Movilidad</span></div>
+<div style="position: relative; height: 210px; background: linear-gradient(140deg, #004250 20%, #D6D4A5 160%); color: #FFFFFF; padding: 12px; box-sizing: border-box; font-size: 13px"><div class="foto"><img src="img/noticia-observatorio.webp" alt="Un hombre en silla de ruedas y su acompañante pasean por un parque." width="1125" height="750" loading="lazy"></div><span style="position: absolute; left: 24px; bottom: -12px; background: #D6D4A5; color: #004250; font-weight: 700; font-size: 13px; padding: 3px 10px">Movilidad</span></div>
 <div style="padding: 30px 24px 26px"><h3 style="margin: 0 0 12px; font-family: Nunito, sans-serif; font-weight: 800; font-size: 20px; line-height: 1.3"><a href="#" style="text-decoration: none">IMPULSA IGUALDAD presenta el Observatorio estatal de la prestación ortoprotésica</a></h3><p style="margin: 0; font-size: 15px; color: #4A5A5F">6 de octubre de 2026</p></div>
 </article>
 </div>
@@ -299,12 +316,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <a href="https://www.instagram.com/impulsa_igualdad/" style="font-weight: 700">Síguenos en Instagram</a>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))">
-<div style="height: 200px; background: #004250"></div>
-<div style="height: 200px; background: #FF5C3E"></div>
-<div style="height: 200px; background: #D6D4A5"></div>
-<div style="height: 200px; background: #0B6F7F"></div>
-<div style="height: 200px; background: #D9E506"></div>
-<div style="height: 200px; background: #004250"></div>
+<div class="insta"><img src="img/insta-1.webp" alt="Mesa de debate de la jornada sobre movilidad accesible, con cinco ponentes ante una pantalla." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-2.webp" alt="Una ponente en silla de ruedas interviene en la jornada sobre movilidad accesible y transporte público." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-3.webp" alt="Tres participantes, una de ellas en silla de ruedas, en el I Congreso Estatal de Juventud con Discapacidad." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-4.webp" alt="Dos ponentes, uno de ellos en silla de ruedas y con un micrófono, inauguran la jornada sobre movilidad accesible." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-5.webp" alt="Personaje animado del taller MasterPRIM, un niño en silla de ruedas que saluda desde un plató." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-6.webp" alt="Foto de grupo del equipo del proyecto RUMBO en Castilla y León." width="600" height="600" loading="lazy"></div>
 </div>
 </section>
 
@@ -325,7 +342,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <footer style="background: #002A33; color: #FFFFFF; font-size: 16px">
 <div style="max-width: 1180px; margin: 0 auto; padding: 72px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 14px">
-<span style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 24px; line-height: 1.05">IMPULSA<br>IGUALDAD</span>
+<img src="img/logo.webp" alt="IMPULSA IGUALDAD" width="600" height="163" loading="lazy" style="height: 52px; width: auto; align-self: flex-start; filter: brightness(0) invert(1)">
 <p style="margin: 0">Avd. Doctor García Tapia, 129 Local 5<br>28030 Madrid</p>
 </div>
 <nav aria-label="Enlaces del pie" style="display: flex; flex-direction: column; gap: 8px">
