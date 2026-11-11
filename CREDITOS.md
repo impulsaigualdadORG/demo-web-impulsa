@@ -2,7 +2,7 @@
 
 Demo de la nueva home de IMPULSA IGUALDAD. Todas las imágenes proceden de www.impulsaigualdad.org, descargadas el 10 de noviembre de 2026. No se ha usado ninguna imagen de Unsplash ni de Pexels.
 
-Los originales están sin modificar en `fotos/web/`. Las versiones optimizadas (WebP, recortadas y reducidas) están en `img/`. El duotono azul y naranja se aplica con CSS en `index.html`, no sobre los archivos.
+Los originales están sin modificar en `fotos/web/`. Las versiones optimizadas (WebP, recortadas y reducidas) están en `img/`. El duotono azul (#004250) y verde (#D9E506) se aplica con CSS en `index.html`, no sobre los archivos.
 
 ## Licencia
 

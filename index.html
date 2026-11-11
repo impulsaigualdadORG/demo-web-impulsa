@@ -12,18 +12,19 @@ body{margin:0;background:#FFFFFF}
 a{color:#004250}a:hover{color:#B8361F}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #FF5C3E;outline-offset:3px}
 
-/* Fotos: duotono azul #004250 + naranja #FF5C3E con CSS; los archivos originales no se modifican */
+/* Fotos: duotono azul #004250 + verde #D9E506 con CSS; los archivos originales no se modifican.
+   Se eligió el verde y no el naranja porque el contraste de luminosidad con el azul (8:1) se mantiene con cualquier tipo de daltonismo. */
 .foto,.duo{position:absolute;inset:0;overflow:hidden}
 .foto img,.duo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.duo{background:#FF5C3E;isolation:isolate}
+.duo{background:var(--duo-claro,#D9E506);isolation:isolate}
 .duo img{filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply}
 .duo::after{content:"";position:absolute;inset:0;background:#004250;mix-blend-mode:lighten;pointer-events:none}
 .capa{position:absolute;inset:0;pointer-events:none}
 .sobre-foto>:not(.duo):not(.capa){position:relative}
 .hero-foto{left:auto;width:58%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%)}
 .hero-foto img{object-position:50% 12%}
-.hero-capa{background:linear-gradient(90deg,rgba(0,42,51,.9) 0%,rgba(0,42,51,.54) 55%,rgba(0,42,51,.42) 100%)}
-@media (max-width:900px){.hero-foto{width:100%;-webkit-mask-image:none;mask-image:none}.hero-capa{background:rgba(0,42,51,.6)}}
+.hero-capa{background:linear-gradient(90deg,rgba(0,42,51,.9) 0%,rgba(0,42,51,.74) 55%,rgba(0,42,51,.64) 100%)}
+@media (max-width:900px){.hero-foto{width:100%;-webkit-mask-image:none;mask-image:none}.hero-capa{background:rgba(0,42,51,.76)}}
 .insta{position:relative;height:200px;overflow:hidden}
 .insta img{width:100%;height:100%;object-fit:cover;display:block}
 /* Móvil: el titular del hero y las palabras en letra de pincel se salían de la pantalla */
@@ -110,7 +111,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <div aria-hidden="true" style="position: absolute; left: 0; bottom: 0; width: 70%; height: 70%; background: #FF5C3E; border-radius: 40% 60% 55% 45%; opacity: 0.85"></div>
 <div class="sobre-foto" style="position: relative; background: #004250; color: #FFFFFF; padding: 56px 44px; text-align: center; min-height: 360px; display: flex; flex-direction: column; justify-content: center; gap: 16px">
 <div class="duo"><img src="img/red.webp" alt="" width="1200" height="900" loading="lazy"></div>
-<div aria-hidden="true" class="capa" style="background: rgba(0,42,51,0.52)"></div>
+<div aria-hidden="true" class="capa" style="background: rgba(0,42,51,0.7)"></div>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 32px; line-height: 1.15">Una red de federaciones y asociaciones</h3>
 <p style="margin: 0; font-size: 17px">Si tu asociación trabaja por los derechos de las personas con discapacidad física u orgánica, suma fuerzas con nosotros.</p>
 <a href="#" style="align-self: center; text-decoration: none; color: #D9E506; font-family: Nunito, sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; font-size: 15px; padding: 10px 0; border-bottom: 2px solid #D9E506">Únete a la red</a>
