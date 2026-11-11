@@ -1,6 +1,6 @@
 # Créditos de las imágenes
 
-Demo de la nueva home de IMPULSA IGUALDAD. Todas las imágenes proceden de www.impulsaigualdad.org, descargadas el 10 de noviembre de 2026. No se ha usado ninguna imagen de Unsplash ni de Pexels.
+Demo de la nueva home de IMPULSA IGUALDAD. Todas las imágenes proceden de www.impulsaigualdad.org, descargadas el 10 de noviembre de 2026, salvo el cartel de la campaña Hackea el capacitismo, que procede de la web de la campaña. No se ha usado ninguna imagen de Unsplash ni de Pexels.
 
 Los originales están sin modificar en `fotos/web/`. Las versiones optimizadas (WebP, recortadas y reducidas) están en `img/`. El duotono azul (#004250) y verde (#D9E506) se aplica con CSS en `index.html`, no sobre los archivos.
 
@@ -22,7 +22,7 @@ Las rutas de origen son relativas a `https://www.impulsaigualdad.org/wp-content/
 | Programa: defensa de derechos | `derechos.webp` | `derechos-mural.png` | `uploads/2023/11/CALLAO-2-1024x461-1.png` (página del proyecto RUMBO) | Duotono |
 | Programa: formación y empleo | `formacion.webp` | `formacion-campus.png` | `uploads/2023/11/slider_campus.png` (slider de la home) | Duotono |
 | Proyectos: TUR4all | `proy-tur4all.webp` | `tur4all-alhambra.jpg` | `uploads/2023/12/imserso2-e1713860974953.jpg` (página del programa de vacaciones) | Recorte y duotono |
-| Proyectos: Hackea el capacitismo | `proy-hackea.webp` | `noticia-capacitismo.png` | `uploads/2026/10/NdP-Madrid-amanece-empapelado-contra-el-capacitismo.png` | Recorte sobre los carteles, sin duotono. Provisional: falta un cartel de la web de la campaña |
+| Proyectos: Hackea el capacitismo | `proy-hackea.webp` | `hackea-cartel-01.webp` | Cartel 1 de 14 publicado en https://hackeaelcapacitismo.impulsaigualdad.org/ (consultada el 11 de noviembre de 2026) | Sin duotono ni recorte; es el archivo de la web tal cual |
 | Proyectos: Observatorio | `proy-observatorio.webp` | `noticia-observatorio.png` | La misma imagen de la noticia del Observatorio | Duotono |
 | Proyectos: Taller MasterPRIM | `proy-masterprim.webp` | `masterprim-portada.jpg` | `uploads/2024/09/slider_masterprim.jpg` (portada de MasterPRIM en el slider de la home) | Sin duotono |
 | Noticia: V Congreso TUR4all | `noticia-congreso.webp` | `noticia-congreso.png` | `uploads/2026/10/IA_Congreso-turismo-accesible_Bilbao.png` | Sin duotono |

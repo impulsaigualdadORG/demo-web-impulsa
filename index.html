@@ -33,6 +33,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .proyectos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,640px),1fr))}
 .par{display:grid;grid-template-columns:1fr 1fr}
 .par-foto{position:relative;min-height:340px;background:#004250}
+.par-foto.cartel img{object-fit:contain;padding:22px;box-sizing:border-box}
 @media (min-width:1280px){.par:nth-child(n+3) .par-foto{order:2}}
 @media (max-width:640px){.par{grid-template-columns:1fr}.par-foto{min-height:240px}}
 </style>
@@ -212,7 +213,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 </article>
 </div>
 <div class="par">
-<div class="par-foto"><div class="foto"><img src="img/proy-hackea.webp" alt="Pared cubierta de carteles de la campaña con frases capacitistas tachadas y corregidas a mano, como «Es una persona especial»." width="648" height="648" loading="lazy"></div></div>
+<div class="par-foto cartel"><div class="foto"><img src="img/proy-hackea.webp" alt="Cartel de la campaña. Frase capacitista tachada: «No dejes que la discapacidad te limite». Respuesta escrita a mano: «Perfecto, ahora díselo a las escaleras»." width="500" height="700" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #004250; color: #FFFFFF; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 12px">Campaña</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">Hackea el capacitismo</h3>
