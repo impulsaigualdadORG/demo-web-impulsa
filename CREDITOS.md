@@ -21,8 +21,10 @@ Las rutas de origen son relativas a `https://www.impulsaigualdad.org/wp-content/
 | Programa: programa de vacaciones | `vacaciones.webp` | `vacaciones-sevilla.jpg` | `uploads/2025/01/viaje-imserso-sevilla.jpg` | Duotono |
 | Programa: defensa de derechos | `derechos.webp` | `derechos-mural.png` | `uploads/2023/11/CALLAO-2-1024x461-1.png` (página del proyecto RUMBO) | Duotono |
 | Programa: formación y empleo | `formacion.webp` | `formacion-campus.png` | `uploads/2023/11/slider_campus.png` (slider de la home) | Duotono |
-| Proyectos: RUMBO | `rumbo.webp` | `rumbo.jpg` | `uploads/2024/02/AP-PREDIF-RUMBO.jpg` | Recorte (sin la franja de logotipos) y duotono |
-| Proyectos: proyectos europeos | `europeos.webp` | `europeos-congreso.png` | `uploads/2025/02/Fran-Sardon-denuncia-falta-de-taxis-accesibles-2.png` (IV Congreso Internacional de Turismo Accesible) | Duotono |
+| Proyectos: TUR4all | `proy-tur4all.webp` | `tur4all-alhambra.jpg` | `uploads/2023/12/imserso2-e1713860974953.jpg` (página del programa de vacaciones) | Recorte y duotono |
+| Proyectos: Hackea el capacitismo | `proy-hackea.webp` | `noticia-capacitismo.png` | `uploads/2026/10/NdP-Madrid-amanece-empapelado-contra-el-capacitismo.png` | Recorte sobre los carteles, sin duotono. Provisional: falta un cartel de la web de la campaña |
+| Proyectos: Observatorio | `proy-observatorio.webp` | `noticia-observatorio.png` | La misma imagen de la noticia del Observatorio | Duotono |
+| Proyectos: Taller MasterPRIM | `proy-masterprim.webp` | `masterprim-portada.jpg` | `uploads/2024/09/slider_masterprim.jpg` (portada de MasterPRIM en el slider de la home) | Sin duotono |
 | Noticia: V Congreso TUR4all | `noticia-congreso.webp` | `noticia-congreso.png` | `uploads/2026/10/IA_Congreso-turismo-accesible_Bilbao.png` | Sin duotono |
 | Noticia: Madrid empapelado | `noticia-capacitismo.webp` | `noticia-capacitismo.png` | `uploads/2026/10/NdP-Madrid-amanece-empapelado-contra-el-capacitismo.png` | Sin duotono |
 | Noticia: Observatorio | `noticia-observatorio.webp` | `noticia-observatorio.png` | `uploads/2026/10/IMPULSA-IGUALDAD-presenta-el-Observatorio-estatal-de-la-prestacion-ortoprotesica-para-analizar-la-equidad-en-el-acceso-a-productos-de-apoyo-2.png` | Sin duotono |
@@ -30,11 +32,11 @@ Las rutas de origen son relativas a `https://www.impulsaigualdad.org/wp-content/
 | Instagram 2 | `insta-2.webp` | `insta-ponencia.jpeg` | `uploads/2026/06/IMPULSA-IGUALDAD-_-jornada-movilidad-accesible-_-Myriam.jpeg` | Recorte cuadrado |
 | Instagram 3 | `insta-3.webp` | `insta-juventud.jpg` | `uploads/2024/09/Sin-titulo-5.jpg` (I Congreso Estatal de Juventud con Discapacidad) | Recorte cuadrado |
 | Instagram 4 | `insta-4.webp` | `insta-inauguracion.jpeg` | `uploads/2026/06/IMPULSA-IGUALDAD-_-jornada-movilidad-accesible-_-inauguracion_.jpeg` | Recorte cuadrado |
-| Instagram 5 | `insta-5.webp` | `insta-masterprim.jpg` | `uploads/2024/09/slider_masterprim.jpg` (slider de la home) | Recorte cuadrado |
+| Instagram 5 | `insta-5.webp` | `insta-congreso-iv.png` | `uploads/2025/02/Fran-Sardon-denuncia-falta-de-taxis-accesibles-2.png` (IV Congreso Internacional de Turismo Accesible) | Recorte cuadrado |
 | Instagram 6 | `insta-6.webp` | `insta-rumbo-cyl.jpg` | `uploads/2024/02/RUMBO-CyL-Ministerio.jpg` | Recorte cuadrado |
 
 ## Notas
 
 - La tira de Instagram usa imágenes de noticias de la web, no publicaciones reales de la cuenta @impulsa_igualdad.
 - El bloque de testimonio no lleva foto: la cita y el nombre siguen pendientes, y no se asocia el rostro de nadie a un texto que no ha dicho.
-- Para «proyectos europeos» no hay fotos en la web (solo logotipos y carteles); se ha usado una foto real del IV Congreso Internacional de Turismo Accesible como solución provisional.
+- En el mosaico de proyectos, cada proyecto con texto lleva su imagen al lado. Las fotos sueltas de RUMBO (`fotos/web/rumbo.jpg`) y de proyectos europeos ya no se usan, porque esos dos proyectos no tienen texto en la home.

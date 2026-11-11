@@ -29,6 +29,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .insta img{width:100%;height:100%;object-fit:cover;display:block}
 /* Móvil: el titular del hero y las palabras en letra de pincel se salían de la pantalla */
 @media (max-width:600px){#t-hero{font-size:40px!important}[style*="Caveat Brush"]{font-size:17vw!important}}
+/* Proyectos: cada proyecto es una pareja de foto y texto; dos parejas por fila en escritorio, en damero */
+.proyectos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,640px),1fr))}
+.par{display:grid;grid-template-columns:1fr 1fr}
+.par-foto{position:relative;min-height:340px;background:#004250}
+@media (min-width:1280px){.par:nth-child(n+3) .par-foto{order:2}}
+@media (max-width:640px){.par{grid-template-columns:1fr}.par-foto{min-height:240px}}
 </style>
 </head>
 <body>
@@ -195,33 +201,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <h2 id="t-proyectos" style="margin: 0 0 14px; font-family: Nunito, sans-serif; font-size: 46px; line-height: 1.1; color: #004250"><span style="font-weight: 900">Proyectos</span> <span style="font-weight: 300">que abren camino</span></h2>
 <p style="margin: 0; max-width: 680px">Iniciativas propias y cofinanciadas con socios nacionales y europeos.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
-<div style="position: relative; min-height: 340px; background: #004250"><div class="duo"><img src="img/rumbo.webp" alt="Una mujer en silla de ruedas mira un escaparate en la calle junto a su asistente personal." width="800" height="969" loading="lazy"></div></div>
+<div class="proyectos">
+<div class="par">
+<div class="par-foto"><div class="duo"><img src="img/proy-tur4all.webp" alt="Un grupo de viajeros, varios en silla de ruedas, recorre unos jardines con setos y un estanque." width="450" height="441" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #D9E506; color: #004250; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #004250; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 3px 12px">Turismo accesible</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">TUR4all</h3>
 <p style="margin: 0; font-size: 17px">La plataforma de referencia en turismo accesible, con información verificada sobre destinos y recursos.</p>
 <a href="#" style="align-self: center; font-weight: 700; color: #004250">Visitar TUR4all</a>
 </article>
+</div>
+<div class="par">
+<div class="par-foto"><div class="foto"><img src="img/proy-hackea.webp" alt="Pared cubierta de carteles de la campaña con frases capacitistas tachadas y corregidas a mano, como «Es una persona especial»." width="648" height="648" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #004250; color: #FFFFFF; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #FF5C3E; color: #1B2B30; font-weight: 700; font-size: 13px; padding: 3px 12px">Campaña</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">Hackea el capacitismo</h3>
 <p style="margin: 0; font-size: 17px">Un asistente que detecta sesgos capacitistas en los textos y una campaña que los saca a la calle.</p>
 <a href="#" style="align-self: center; font-weight: 700; color: #D9E506">Conoce la campaña</a>
 </article>
+</div>
+<div class="par">
+<div class="par-foto"><div class="duo"><img src="img/proy-observatorio.webp" alt="Un hombre en silla de ruedas y su acompañante pasean por un parque." width="1125" height="750" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #FF5C3E; color: #1B2B30; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #1B2B30; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 3px 12px">Movilidad</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">Observatorio de la prestación ortoprotésica</h3>
 <p style="margin: 0; font-size: 17px">Datos públicos para analizar la equidad en el acceso a productos de apoyo.</p>
 <a href="#" style="align-self: center; font-weight: 700; color: #1B2B30">Ver observatorio</a>
 </article>
-<div style="position: relative; min-height: 340px; background: #004250"><div class="duo"><img src="img/europeos.webp" alt="Tres ponentes, uno de ellos en silla de ruedas, debaten en el escenario de un congreso internacional con subtítulos en inglés en la pantalla." width="1013" height="675" loading="lazy"></div></div>
+</div>
+<div class="par">
+<div class="par-foto"><div class="foto"><img src="img/proy-masterprim.webp" alt="Portada del taller MasterPRIM: un niño en silla de ruedas, dibujado, saluda desde el centro de un plató." width="1200" height="720" loading="lazy"></div></div>
 <article style="min-height: 340px; background: #D6D4A5; color: #004250; padding: 48px 40px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center">
 <span style="align-self: center; background: #004250; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 3px 12px">Educación</span>
 <h3 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; line-height: 1.15">Taller MasterPRIM</h3>
 <p style="margin: 0; font-size: 17px">Un taller educativo para conocer a las personas con discapacidad sin estereotipos.</p>
 <a href="#" style="align-self: center; font-weight: 700; color: #004250">Desafía a MasterPRIM</a>
 </article>
+</div>
 </div>
 </section>
 
@@ -321,7 +337,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <div class="insta"><img src="img/insta-2.webp" alt="Una ponente en silla de ruedas interviene en la jornada sobre movilidad accesible y transporte público." width="600" height="600" loading="lazy"></div>
 <div class="insta"><img src="img/insta-3.webp" alt="Tres participantes, una de ellas en silla de ruedas, en el I Congreso Estatal de Juventud con Discapacidad." width="600" height="600" loading="lazy"></div>
 <div class="insta"><img src="img/insta-4.webp" alt="Dos ponentes, uno de ellos en silla de ruedas y con un micrófono, inauguran la jornada sobre movilidad accesible." width="600" height="600" loading="lazy"></div>
-<div class="insta"><img src="img/insta-5.webp" alt="Personaje animado del taller MasterPRIM, un niño en silla de ruedas que saluda desde un plató." width="600" height="600" loading="lazy"></div>
+<div class="insta"><img src="img/insta-5.webp" alt="Dos ponentes, uno de ellos en silla de ruedas, conversan en el escenario del IV Congreso Internacional de Turismo Accesible." width="600" height="600" loading="lazy"></div>
 <div class="insta"><img src="img/insta-6.webp" alt="Foto de grupo del equipo del proyecto RUMBO en Castilla y León." width="600" height="600" loading="lazy"></div>
 </div>
 </section>
